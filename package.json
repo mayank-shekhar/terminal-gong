@@ -2,7 +2,7 @@
   "name": "terminal-gong",
   "displayName": "Terminal Gong",
   "description": "Play a funny sound when terminal commands fail (including invalid commands).",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "Mayank",
   "engines": {
     "vscode": "^1.96.0"

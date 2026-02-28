@@ -1,0 +1,69 @@
+{
+  "name": "terminal-gong",
+  "displayName": "Terminal Gong",
+  "description": "Play a funny sound when terminal commands fail (including invalid commands).",
+  "version": "1.0.0",
+  "publisher": "Mayank",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "terminal",
+    "sound",
+    "notifications",
+    "cursor",
+    "vscode"
+  ],
+  "activationEvents": [
+    "onStartupFinished",
+    "onCommand:terminalGong.testSound"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "terminalGong.testSound",
+        "title": "Terminal Gong: Test Sound"
+      }
+    ],
+    "configuration": {
+      "title": "Terminal Gong",
+      "properties": {
+        "terminalGong.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable sound alerts for failed terminal commands."
+        },
+        "terminalGong.soundFilePath": {
+          "type": "string",
+          "default": "",
+          "description": "Absolute path to your MP3 (or other audio file). If empty, extension falls back to media/funny.mp3 bundled in the extension."
+        },
+        "terminalGong.showFailureMessage": {
+          "type": "boolean",
+          "default": false,
+          "description": "Show a toast message when a command fails."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "npm run compile",
+    "lint": "echo 'No linter configured'"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "@types/vscode": "^1.96.0",
+    "typescript": "^5.6.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mayank-shekhar/terminal-gong"
+  },
+  "license": "MIT"
+}
